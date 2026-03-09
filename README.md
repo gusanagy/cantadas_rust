@@ -32,6 +32,33 @@ sudo cp target/release/cantadas_cli /usr/local/bin/cantadas
 
 Depois disso, basta digitar `cantadas` em qualquer lugar do seu terminal.
 
+## Baixar binário pré-compilado
+
+Se você preferir baixar apenas o executável já compilado, há duas opções:
+
+- Usar o script provido no repositório (recomendado quando houver releases com o asset):
+
+```bash
+chmod +x scripts/download_cantadas.sh
+./scripts/download_cantadas.sh
+```
+
+O script tenta baixar o asset chamado `cantadas_cli` da release mais recente do repositório e o instala em `/usr/local/bin/cantadas` (usar sudo se necessário). Você também pode passar um nome de asset e um destino:
+
+```bash
+./scripts/download_cantadas.sh nome_do_asset /caminho/de/destino
+```
+
+- Download direto (quando houver um asset em releases):
+
+```bash
+curl -L -o cantadas_cli "https://github.com/gusanagy/cantadas_rust/releases/latest/download/cantadas_cli"
+chmod +x cantadas_cli
+sudo mv cantadas_cli /usr/local/bin/cantadas
+```
+
+Nota: para que o download direto funcione, o repositório precisa ter uma release com o binário anexado com o nome `cantadas_cli` (ou outro nome que você passará ao script).
+
 ## Agradecimentos
 
 Este mini projeto foi inspirado no repositório:
