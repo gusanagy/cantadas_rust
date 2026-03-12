@@ -35,6 +35,25 @@ Depois disso, basta digitar `cantadas` em qualquer lugar do seu terminal.
 
 ## Agradecimentos
 
+## Compilar e instalar localmente (script)
+
+Há um script que automatiza a checagem do `cargo`, compila em modo release e move o binário para uma pasta de binários:
+
+```bash
+chmod +x scripts/build_and_install.sh
+./scripts/build_and_install.sh [dest_dir]
+```
+
+Parâmetros:
+- `dest_dir` (opcional): diretório de destino para o binário (padrão: `/usr/local/bin`).
+
+O script fará o seguinte:
+- Verifica se `cargo` está disponível; caso não esteja, tenta instalar `rustup` (requer `curl`).
+- Compila com `cargo build --release`.
+- Move o binário `cantadas_cli` para o diretório de destino (usa `sudo` se necessário).
+- Limpa o terminal e mostra uma mensagem solicitando que você digite `cantadas_cli`.
+
+
 Este mini projeto foi inspirado no repositório:
 
 https://github.com/victorsoares96/cantadas/tree/master
